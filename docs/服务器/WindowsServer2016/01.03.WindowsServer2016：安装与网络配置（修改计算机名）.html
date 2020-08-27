@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>01.03.WindowsServer2016：安装与网络配置（修改计算机名） | 实操笔记</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="记录怕忘记的">
+    <link rel="preload" href="/Operation/assets/css/0.styles.f1a09996.css" as="style"><link rel="preload" href="/Operation/assets/js/app.0b1d34dd.js" as="script"><link rel="preload" href="/Operation/assets/js/2.0ba3a274.js" as="script"><link rel="preload" href="/Operation/assets/js/15.939b3abe.js" as="script"><link rel="prefetch" href="/Operation/assets/js/10.64d7754b.js"><link rel="prefetch" href="/Operation/assets/js/11.75c5c9ce.js"><link rel="prefetch" href="/Operation/assets/js/12.3f041552.js"><link rel="prefetch" href="/Operation/assets/js/13.899eab24.js"><link rel="prefetch" href="/Operation/assets/js/14.e5c3e378.js"><link rel="prefetch" href="/Operation/assets/js/16.3ba38d4e.js"><link rel="prefetch" href="/Operation/assets/js/17.56791a79.js"><link rel="prefetch" href="/Operation/assets/js/18.f6487eb9.js"><link rel="prefetch" href="/Operation/assets/js/19.b8ebdba1.js"><link rel="prefetch" href="/Operation/assets/js/20.c08ef062.js"><link rel="prefetch" href="/Operation/assets/js/21.868aaba6.js"><link rel="prefetch" href="/Operation/assets/js/22.d78f9acd.js"><link rel="prefetch" href="/Operation/assets/js/23.c9f7c9be.js"><link rel="prefetch" href="/Operation/assets/js/24.dbb20974.js"><link rel="prefetch" href="/Operation/assets/js/25.51e3fe03.js"><link rel="prefetch" href="/Operation/assets/js/3.bd73314a.js"><link rel="prefetch" href="/Operation/assets/js/4.bd0c8b53.js"><link rel="prefetch" href="/Operation/assets/js/5.63080502.js"><link rel="prefetch" href="/Operation/assets/js/6.9324749a.js"><link rel="prefetch" href="/Operation/assets/js/7.e583e528.js"><link rel="prefetch" href="/Operation/assets/js/8.49f7f264.js"><link rel="prefetch" href="/Operation/assets/js/9.baabf548.js">
+    <link rel="stylesheet" href="/Operation/assets/css/0.styles.f1a09996.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Operation/" class="home-link router-link-active"><!----> <span class="site-name">实操笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/基础知识/WindowsServer2016/" class="nav-link">
+  WindowsServer2016
+</a></li><li class="dropdown-item"><!----> <a href="/Operation/基础知识/Oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="硬件维护" class="dropdown-title"><span class="title">硬件维护</span> <span class="arrow down"></span></button> <button type="button" aria-label="硬件维护" class="mobile-dropdown-title"><span class="title">硬件维护</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/硬件维护/扫描仪/FOUNder 方正/" class="nav-link">
+  FOUNder 方正
+</a></li><li class="dropdown-item"><!----> <a href="/Operation/硬件维护/扫描仪/DR-M160II/" class="nav-link">
+  DR-M160II
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目维护" class="dropdown-title"><span class="title">项目维护</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目维护" class="mobile-dropdown-title"><span class="title">项目维护</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/项目维护/环境自动监控系统/" class="nav-link">
+  环境自动监控系统
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/基础知识/WindowsServer2016/" class="nav-link">
+  WindowsServer2016
+</a></li><li class="dropdown-item"><!----> <a href="/Operation/基础知识/Oracle/" class="nav-link">
+  Oracle
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="硬件维护" class="dropdown-title"><span class="title">硬件维护</span> <span class="arrow down"></span></button> <button type="button" aria-label="硬件维护" class="mobile-dropdown-title"><span class="title">硬件维护</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/硬件维护/扫描仪/FOUNder 方正/" class="nav-link">
+  FOUNder 方正
+</a></li><li class="dropdown-item"><!----> <a href="/Operation/硬件维护/扫描仪/DR-M160II/" class="nav-link">
+  DR-M160II
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="项目维护" class="dropdown-title"><span class="title">项目维护</span> <span class="arrow down"></span></button> <button type="button" aria-label="项目维护" class="mobile-dropdown-title"><span class="title">项目维护</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Operation/项目维护/环境自动监控系统/" class="nav-link">
+  环境自动监控系统
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>WindowsServer2016</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>01.WindowsServer2016：安装与网络配置</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Operation/基础知识/WindowsServer2016/01.01.WindowsServer2016：安装与网络配置（虚拟机上安装系统）.html" class="sidebar-link">01.01.WindowsServer2016：安装与网络配置（虚拟机上安装系统）</a></li><li><a href="/Operation/基础知识/WindowsServer2016/01.02.WindowsServer2016：安装与网络配置（DataCenter安装）.html" class="sidebar-link">01.02.WindowsServer2016：安装与网络配置（DataCenter安装）</a></li><li><a href="/Operation/基础知识/WindowsServer2016/01.03.WindowsServer2016：安装与网络配置（修改计算机名）.html" class="active sidebar-link">01.03.WindowsServer2016：安装与网络配置（修改计算机名）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Operation/基础知识/WindowsServer2016/01.03.WindowsServer2016：安装与网络配置（修改计算机名）.html#图形方式修改" class="sidebar-link">图形方式修改</a></li><li class="sidebar-sub-header"><a href="/Operation/基础知识/WindowsServer2016/01.03.WindowsServer2016：安装与网络配置（修改计算机名）.html#命令方式修改" class="sidebar-link">命令方式修改</a></li></ul></li><li><a href="/Operation/基础知识/WindowsServer2016/01.04.WindowsServer2016：安装与网络配置（加入工作组）.html" class="sidebar-link">01.04.WindowsServer2016：安装与网络配置（加入工作组）.</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>02.WindowsServer2016：用户和组的管理</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>03.WindowsServer2016：NTFS权限</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>04.WindowsServer2016：DFS技术</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>本页目录：</p> <ul><li>1、图形方式修改</li> <li>2、命令方式修改</li></ul> <hr> <h2 id="图形方式修改"><a href="#图形方式修改" class="header-anchor">#</a> 图形方式修改</h2> <blockquote><p>修改</p></blockquote> <p><img src="/Operation/assets/img/01.03-1.e6044c74.png" alt=""></p> <blockquote><p>重启</p></blockquote> <h2 id="命令方式修改"><a href="#命令方式修改" class="header-anchor">#</a> 命令方式修改</h2> <blockquote><p>命令</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment"># 查看计算机名</span>
+<span class="token function">hostname</span>
+
+<span class="token comment"># 修改名字</span>
+netdom renamecomputer localhost /newname: <span class="token string">&quot;新的名字&quot;</span>
+
+<span class="token comment"># 重启</span>
+<span class="token function">shutdown</span> -r -t <span class="token number">0</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/Operation/基础知识/WindowsServer2016/01.02.WindowsServer2016：安装与网络配置（DataCenter安装）.html" class="prev">
+        01.02.WindowsServer2016：安装与网络配置（DataCenter安装）
+      </a></span> <span class="next"><a href="/Operation/基础知识/WindowsServer2016/01.04.WindowsServer2016：安装与网络配置（加入工作组）.html">
+        01.04.WindowsServer2016：安装与网络配置（加入工作组）.
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/Operation/assets/js/app.0b1d34dd.js" defer></script><script src="/Operation/assets/js/2.0ba3a274.js" defer></script><script src="/Operation/assets/js/15.939b3abe.js" defer></script>
+  </body>
+</html>
